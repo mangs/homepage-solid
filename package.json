@@ -17,8 +17,11 @@
     "lint:javascript": "echo Linting JavaScript... && eslint --ext cjs,js,mjs --max-warnings 0 --cache --cache-location .eslintcache --cache-strategy content .",
     "list:todo-comments": "node_modules/@vscode/ripgrep/bin/rg --only-matching '(TODO|FIXME):[a-zA-Z0-9\\t .,;?]+'",
     "list:eslint:disable-directives": "node_modules/@vscode/ripgrep/bin/rg '/(/|\\*+)[ \\t]*eslint-disable[^*]*(\\*+/)?'",
+    "preview": "wrangler dev",
+    "preview:local": "wrangler dev --local",
     "reinstall": "npm run --silent delete:node_modules && npm run --silent delete:package-lock && npm i",
     "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci",
+    "start": "npm run --silent preview:local",
     "validate:formatting": "prettier --check --no-editorconfig .",
     "validate:formatting:javascript": "prettier --check --no-editorconfig \"**/*.{cjs,js,mjs}\"",
     "validate:formatting:json": "prettier --check --no-editorconfig \"**/*.json\"",
@@ -35,6 +38,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-regexp": "1.7.0",
     "eslint-plugin-unicorn": "42.0.0",
-    "prettier": "2.6.2"
+    "prettier": "2.6.2",
+    "wrangler": "2.0.6"
   }
 }

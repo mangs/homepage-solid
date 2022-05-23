@@ -1,0 +1,7 @@
+name = "homepage"
+compatibility_date = "2022-05-23"
+main = "./src/entry.mjs"
+# tsconfig = "./tsconfig.json"
+
+[dev]
+port = 8080
