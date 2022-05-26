@@ -5,3 +5,6 @@ main = "./src/entry.mjs"
 
 [dev]
 port = 8080
+
+[site]
+bucket = "./public"
