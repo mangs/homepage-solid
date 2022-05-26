@@ -1,8 +1,12 @@
 // Internal Imports
-import assetManifestJson from '__STATIC_CONTENT_MANIFEST'; // eslint-disable-line import/no-unresolved -- __STATIC_CONTENT_MANIFEST is hard-coded for Cloudflare
+import assetManifestJson from '__STATIC_CONTENT_MANIFEST'; // eslint-disable-line import/no-unresolved -- __STATIC_CONTENT_MANIFEST is JSON containing Cloudflare's static asset manifest
 
 // Local Variables
 const assetMap = JSON.parse(assetManifestJson);
+const mimeMap = {
+  css: 'text/css',
+  webp: 'image/webp',
+};
 
 // Local Functions
 function buildHeaders(url) {
@@ -18,23 +22,11 @@ function buildHeaders(url) {
 }
 
 function getAssetPath({ pathname }) {
-  console.log({ pathname });
-
-  // let path = pathname;
-  // if (path.endsWith('/')) {
-  //   path = `${assetsDirectory}${routesDirectory}${path}index.html`;
-  // }
   return pathname.slice(1);
 }
 
 function getMimeType(fileExtension) {
-  switch (fileExtension) {
-    case 'webp':
-      return 'image/webp';
-
-    default:
-      return 'text/html;charset=UTF-8';
-  }
+  return mimeMap[fileExtension] ?? 'text/html;charset=UTF-8';
 }
 
 // Module Definition
@@ -57,7 +49,6 @@ export default {
     // Asset Handling
     if (url.pathname === '/') {
       const formattedManifest = JSON.stringify(JSON.parse(assetManifestJson), undefined, 2);
-      const manifestElement = `<pre>${formattedManifest}</pre>`;
       return new Response(
         `<html>
           <head>
@@ -66,20 +57,18 @@ export default {
           </head>
           <body>
             <h1>hey</h1>
-            ${manifestElement}
+            <pre>${formattedManifest}</pre>
           </body>
         </html>`,
         {
-          headers: {
-            'Content-type': 'text/html',
-          },
+          headers: { 'Content-type': 'text/html;charset=UTF-8' },
           status: 200,
         },
       );
     }
     const assetPath = getAssetPath(url);
     const mappedAssetPath = assetMap[assetPath];
-    const assetStream = await environment.__STATIC_CONTENT.get(mappedAssetPath, { type: 'stream' }); // eslint-disable-line no-underscore-dangle -- __STATIC_CONTENT is hard-coded for Cloudflare
+    const assetStream = await environment.__STATIC_CONTENT.get(mappedAssetPath, { type: 'stream' }); // eslint-disable-line no-underscore-dangle -- __STATIC_CONTENT is the static asset Workers KV store
     if (!assetStream) {
       return new Response(`"${assetPath}" not found`, {
         headers,
