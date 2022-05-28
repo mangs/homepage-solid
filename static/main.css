@@ -1,0 +1,14 @@
+:root {
+  --whiteish: #f7f9f9;
+}
+
+body {
+  background-color: #15202b;
+  color: var(--whiteish);
+  font-family: sans-serif;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid red;
+}

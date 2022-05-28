@@ -58,6 +58,8 @@ export default {
           <body>
             <h1>hey</h1>
             <pre>${formattedManifest}</pre>
+            <input type="text" placeholder="hey y'all" value="" />
+            <button>hey y'all</button>
           </body>
         </html>`,
         {
