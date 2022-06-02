@@ -3,8 +3,8 @@
   "author": "Eric L. Goldstein",
   "description": "My homepage built with SolidJS streaming, isomorphic rendering",
   "engines": {
-    "node": "16.15.0",
-    "npm": "8.5.5"
+    "node": "16.15.1",
+    "npm": "8.11.0"
   },
   "scripts": {
     "delete:node_modules": "rm -rf node_modules",
