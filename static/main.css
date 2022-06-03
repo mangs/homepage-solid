@@ -7,8 +7,3 @@ body {
   color: var(--whiteish);
   font-family: sans-serif;
 }
-
-button:focus-visible,
-input:focus-visible {
-  outline: 3px solid red;
-}

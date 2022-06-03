@@ -18,8 +18,7 @@ export default {
           </head>
           <body>
             <h1>hey</h1>
-            <input type="text" placeholder="hey y'all" value="" />
-            <button>hey y'all</button>
+            <img src="myhead.webp" alt="Mah head" />
           </body>
         </html>`,
         {
