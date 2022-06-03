@@ -9,7 +9,8 @@ export default {
 
     // Asset Handling
     return new Response(
-      `<html lang="en">
+      `<!DOCTYPE html>
+      <html lang="en">
           <head>
             <link rel="stylesheet" href="main.css" />
             <link rel="icon" href="favicon.webp" />
