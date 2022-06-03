@@ -5,3 +5,5 @@ main = "./src/worker/worker.mjs"
 
 [dev]
 port = 8080
+
+[env.production]
