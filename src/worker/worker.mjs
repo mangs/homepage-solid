@@ -27,7 +27,7 @@ export default {
           </head>
           <body>
             <h1>hey</h1>
-            <img src="myhead.webp" alt="Mah head" />
+            <img alt="Mah head" class="head" src="myhead.webp" />
           </body>
         </html>`,
       {

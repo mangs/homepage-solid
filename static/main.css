@@ -7,3 +7,8 @@ body {
   color: var(--whiteish);
   font-family: sans-serif;
 }
+
+.head {
+  height: 496px;
+  width: 844px;
+}
