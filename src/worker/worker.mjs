@@ -2,12 +2,19 @@
 // eslint-disable-next-line import/no-default-export -- Cloudflare Workers require a default export
 export default {
   fetch(request /* , environment, context */) {
+    const requestUrl = new URL(request.url);
+
+    // Block Invalid HTTP Methods
     const isValidMethod = /^(?:GET|HEAD)$/.test(request.method);
     if (!isValidMethod) {
       return new Response(`Method "${request.method}" not allowed`, { status: 405 });
     }
 
-    // Asset Handling
+    // Handle Unmatched Assets
+    if (requestUrl.pathname !== '/') {
+      return new Response(`"${requestUrl.pathname}" not found`, { status: 404 });
+    }
+
     return new Response(
       `<!DOCTYPE html>
       <html lang="en">
