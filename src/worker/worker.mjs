@@ -14,8 +14,9 @@ export default {
           <head>
             <link rel="stylesheet" href="main.css" />
             <link rel="icon" href="favicon.webp" />
+            <meta name="description" content="Eric's homepage" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>Eric's Home</title>
+            <title>hey</title>
           </head>
           <body>
             <h1>hey</h1>
