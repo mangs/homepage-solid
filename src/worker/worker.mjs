@@ -21,6 +21,7 @@ export default {
           <head>
             <link rel="stylesheet" href="main.css" />
             <link rel="icon" href="favicon.webp" />
+            <link rel="apple-touch-icon" href="favicon.webp" />
             <meta name="description" content="Eric's homepage" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title>hey</title>
