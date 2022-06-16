@@ -22,7 +22,7 @@
     "list:eslint:disable-directives": "node_modules/@vscode/ripgrep/bin/rg '/(/|\\*+)[ \\t]*eslint-disable[^*]*(\\*+/)?'",
     "reinstall": "npm run --silent delete:node_modules && npm run --silent delete:package-lock && npm i",
     "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci",
-    "start": "npm run --silent dev",
+    "start": "npm run --silent dev:local",
     "validate:formatting": "prettier --cache --check --no-editorconfig .",
     "validate:formatting:javascript": "prettier --cache --check --no-editorconfig \"**/*.{cjs,js,mjs}\"",
     "validate:formatting:json": "prettier --cache --check --no-editorconfig \"**/*.json\"",
