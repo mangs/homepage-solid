@@ -12,22 +12,22 @@
     "deploy": "wrangler publish --experimental-public static --env production",
     "dev": "wrangler dev --experimental-public static",
     "dev:local": "npm run --silent dev -- --local",
-    "format:code": "prettier --write --no-editorconfig .",
-    "format:code:javascript": "prettier --write --no-editorconfig \"**/*.{cjs,js,mjs}\"",
-    "format:code:json": "prettier --write --no-editorconfig \"**/*.json\"",
-    "format:code:markdown": "prettier --write --no-editorconfig \"**/*.md\"",
-    "format:code:yaml": "prettier --write --no-editorconfig \"**/*.yml\"",
+    "format:code": "prettier --cache --write --no-editorconfig .",
+    "format:code:javascript": "prettier --cache --write --no-editorconfig \"**/*.{cjs,js,mjs}\"",
+    "format:code:json": "prettier --cache --write --no-editorconfig \"**/*.json\"",
+    "format:code:markdown": "prettier --cache --write --no-editorconfig \"**/*.md\"",
+    "format:code:yaml": "prettier --cache --write --no-editorconfig \"**/*.yml\"",
     "lint:javascript": "echo Linting JavaScript... && eslint --ext cjs,js,mjs --max-warnings 0 --cache --cache-location .eslintcache --cache-strategy content .",
     "list:todo-comments": "node_modules/@vscode/ripgrep/bin/rg --only-matching '(TODO|FIXME):[a-zA-Z0-9\\t .,;?]+'",
     "list:eslint:disable-directives": "node_modules/@vscode/ripgrep/bin/rg '/(/|\\*+)[ \\t]*eslint-disable[^*]*(\\*+/)?'",
     "reinstall": "npm run --silent delete:node_modules && npm run --silent delete:package-lock && npm i",
     "reinstall:use-lock-file": "npm run --silent delete:node_modules && npm ci",
     "start": "npm run --silent dev",
-    "validate:formatting": "prettier --check --no-editorconfig .",
-    "validate:formatting:javascript": "prettier --check --no-editorconfig \"**/*.{cjs,js,mjs}\"",
-    "validate:formatting:json": "prettier --check --no-editorconfig \"**/*.json\"",
-    "validate:formatting:markdown": "prettier --check --no-editorconfig \"**/*.md\"",
-    "validate:formatting:yaml": "prettier --check --no-editorconfig \"**/*.yml\"",
+    "validate:formatting": "prettier --cache --check --no-editorconfig .",
+    "validate:formatting:javascript": "prettier --cache --check --no-editorconfig \"**/*.{cjs,js,mjs}\"",
+    "validate:formatting:json": "prettier --cache --check --no-editorconfig \"**/*.json\"",
+    "validate:formatting:markdown": "prettier --cache --check --no-editorconfig \"**/*.md\"",
+    "validate:formatting:yaml": "prettier --cache --check --no-editorconfig \"**/*.yml\"",
     "validate:linting:eslint": "eslint-config-prettier ./lib/eslintBaseConfig.json"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-regexp": "1.7.0",
     "eslint-plugin-unicorn": "42.0.0",
-    "prettier": "2.6.2",
-    "wrangler": "2.0.9"
+    "prettier": "2.7.0",
+    "wrangler": "2.0.12"
   }
 }
